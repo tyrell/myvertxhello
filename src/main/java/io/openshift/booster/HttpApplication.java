@@ -11,7 +11,7 @@ import static io.vertx.core.http.HttpHeaders.CONTENT_TYPE;
 
 public class HttpApplication extends AbstractVerticle {
 
-  protected static final String template = "Hello, %s!";
+  protected static final String template = "Bonjour, %s!";
 
   @Override
   public void start(Future<Void> future) {
@@ -41,6 +41,8 @@ public class HttpApplication extends AbstractVerticle {
     if (name == null) {
       name = "World";
     }
+
+    System.out.println(name);
 
     JsonObject response = new JsonObject()
         .put("content", String.format(template, name));
